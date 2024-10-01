@@ -31,7 +31,7 @@ def logfilter(lines):
 if __name__ == "__main__":
     log = read("access.log")
     threats = logfilter(log)
-    #displays suspicious lines
+    #displays suspicious linesss
     for j in threats:
         print(j)
 
