@@ -7,10 +7,24 @@ def read(readfile):
 
 def logfilter(lines):
     data = []
-    #filters the file for suspicious entries and appends them to list and returns
-    for i in lines:
-        if "root login" in i or "Suspicious activity" in i or "Failed login" in i:
-            data.append(i)
+    #user picks what they want to see
+    sort = input("Pick one: [1]Failed root login, [2]Suspicious activity detected, [3]Failed login, [4]ALL:")
+    if sort == "1":
+        for i in lines:
+            if "Failed root login" in i:
+                data.append(i)
+    elif sort == "2":
+        for i in lines:
+            if "Suspicious activity detected" in i:
+                data.append(i)
+    elif sort == "3":
+        for i in lines:
+            if "Failed login" in i:
+                data.append(i)
+    else:
+        for i in lines:
+            if "Failed root login" in i or "Suspicious activity detected" in i or "Failed login" in i:
+                data.append(i)
     return data
 
 
