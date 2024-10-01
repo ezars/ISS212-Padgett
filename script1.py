@@ -7,7 +7,6 @@ def read(readfile):
 
 def logfilter(lines):
     data = []
-    #user picks what they want to see
     sort = input("Pick one: [1]Failed root login, [2]Suspicious activity detected, [3]Failed login, [4]ALL:")
     if sort == "1":
         for i in lines:
@@ -31,7 +30,7 @@ def logfilter(lines):
 if __name__ == "__main__":
     log = read("access.log")
     threats = logfilter(log)
-    #displays suspicious linesss
+    #displays suspicious liness
     for j in threats:
         print(j)
 
